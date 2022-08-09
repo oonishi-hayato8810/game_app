@@ -1,0 +1,41 @@
+
+body{
+    padding: 1rem 3rem;
+    -webkit-transform: skew(-3deg);
+    transform: skew(-3deg);
+    background-image: -webkit-linear-gradient(left, #a9ff20 0%, #68e0cf 100%);
+    background-image: linear-gradient(to right, #79ff20 0%, #68e0cf 100%);
+    text-align: center;
+}
+
+.text_change {
+	font-size:2em;
+	text-align:center;
+	line-height:0.95em;
+	font-weight:bold;
+	color: #FF6F00;
+	text-shadow:
+		0 0.01em 0 #999,
+		0 0.02em 0 #888,
+		0 0.03em 0 #777,
+		0 0.04em 0 #666,
+		0 0.05em 0 #555,
+		0 0.06em 0 #444,
+		0 0.08em 0 #000;
+}
+
+.font_test {
+    font-size: 20px;    /* 文字サイズ指定 */
+    color: #f436a8;     /* 文字色指定 */
+}
+
+
+.button{
+    /*追加*/width: 300px;
+    /*追加*/text-align: center;
+    color: rgb(246, 244, 244);
+    padding: 10px 20px;
+    border: none;
+    background: rgb(6, 55, 250);
+}
+

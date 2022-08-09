@@ -27,10 +27,9 @@
         );
         
         // SQLクエリ作成(よくない例)
-        // $query = 'SELECT * FROM user WHERE user_id = \'' . $user_id . '\' AND password = \'' . $password . '\'' ;
+        // $query = 'SELECT * FROM user WHERE user_id = \'' . $user_id . '\' AND password = \'' . $password . '\'' 
         $query = 'SELECT * FROM user WHERE user_id = :user_ID AND user_password = :password';
         // SQL文をセット
-        //$stmt = $pdo->prepare('SELECT * FROM user');
         $stmt = $pdo->prepare($query);
         // SQL文を実行
 
@@ -59,13 +58,16 @@
         } else {
             $user_name = $result[0]["user_name"];
             // 5件だけ検索
-            $query = 'SELECT * FROM products limit :begin, :size';
+            $query = 'SELECT * FROM products INNER JOIN typess ON products.type_id = typess.type_id INNER JOIN user ON products.order_user_id = user.user_id where order_user_id = :userid limit :begin, :size';
+            
 
 
             $stmt = $pdo->prepare($query);
-            $stmt->bindParam(':begin', $start, PDO::PARAM_INT);  //formatみたいなやつ
-            $stmt->bindParam(':size', $size, PDO::PARAM_INT);    //formatみたいなやつ
+            $stmt->bindValue(':userid', $user_ID);
+            $stmt->bindParam(':begin', $start, PDO::PARAM_INT);  
+            $stmt->bindParam(':size', $size, PDO::PARAM_INT); 
             $stmt->execute();  // sql実行
+
             $result = $stmt->fetchAll();
 
             require_once 'viewSelect_tpl.php';

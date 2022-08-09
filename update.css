@@ -1,0 +1,19 @@
+body{
+    padding: 1rem 3rem;
+    background-image: -webkit-linear-gradient(left, #a9ff20 0%, #68e0cf 100%);
+    background-image: linear-gradient(to right, #79ff20 0%, #68e0cf 100%);
+    text-align: center;
+}
+
+.button {
+    color: #000;
+    background-color: #fff100;
+    border-bottom: 5px solid #ccc100;
+  }
+  
+  .button:hover {
+    margin-top: 3px;
+    color: #000;
+    background: #fff20a;
+    border-bottom: 2px solid #ccc100;
+  }

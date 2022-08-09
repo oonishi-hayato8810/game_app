@@ -1,0 +1,8 @@
+.button2{
+    /*追加*/width: 300px;
+    /*追加*/text-align: center;
+    color: rgb(254, 250, 250);
+    padding: 10px 20px;
+    border: none;
+    background: rgb(250, 6, 6);
+}
